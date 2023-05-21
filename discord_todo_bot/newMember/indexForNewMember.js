@@ -15,10 +15,12 @@ module.exports = async (message)=>{
     }else{
         //新入生のDiscord設定を変更(ToDoチャンネルの作成, ロールの付与, ニックネームの変更)
         const modifyDiscord = require('./modifyDiscord.js')
-        modifyDiscord(message, name, record)
+        await modifyDiscord(message, name, record)
 
         //データベースに追記
         const addToDatabase = require('./addToDatabase.js')
         addToDatabase(message, name)
     }
+
+    message.reply('Discordの設定が完了しました。ようこそ！')
 }
