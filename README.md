@@ -1,3 +1,4 @@
-# discordBot
+# チーム運営用のDiscordBot
 
-新入生受け入れようのDiscord　Botの開発スクリプト
+devブランチにpush-->mainにmerge。
+直接mainブランチにpushしないようにしよう。
