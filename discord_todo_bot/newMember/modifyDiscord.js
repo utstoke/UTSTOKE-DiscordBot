@@ -1,5 +1,4 @@
 const {Events} = require('discord.js')
-const axios = require('axios')
 
 module.exports = async (message, name, gen) => {
     // //todoチャンネルを作成
