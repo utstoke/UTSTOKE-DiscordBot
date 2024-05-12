@@ -1,9 +1,9 @@
-const {Events} = require('discord.js')
+require('dotenv').config();
+const {Events} = require('discord.js');
 
 module.exports = {
    name: Events.GuildMemberAdd,
-   async excute(member){
-      //臨時のロールNewMemberを付与する。
-      await member.roles.add('1116738049548755044')
+   async execute(member){
+      await member.roles.add(process.env.NEW_MEMBER_ROLE_ID);
    }
 }
