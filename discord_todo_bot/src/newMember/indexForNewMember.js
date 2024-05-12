@@ -19,13 +19,20 @@ module.exports = async (message)=>{
 
     // 新入生のDiscord設定を変更
 
-    const updateRoles = require('./updateRoles.js');
-    await updateRoles(message, name, gen);
+    const changeNickname = require('./changeNickname.js');
+    await changeNickname(message, name, gen);
 
-    const updateNickname = require('./updateNickname.js');
-    await updateNickname(message, name, gen);
+    const addRoles = require('./addRoles.js');
+    await addRoles(message, name, gen);
 
-    message.reply(`${name}さんのDiscord設定が完了しました。他のチャンネルも覗いてみてください！`)
+    message.reply(`${name}さんのDiscord設定が完了しました。他のチャンネルも覗いてみてください！`);
+
+    const deleteRole = require('./deleteRole.js');
+    await deleteRole(message, name, gen);
+
+    //ウェルカムchの不要なメッセージを削除する
+    const messagesToDelete = await message.channel.messages.fetch({after: process.env.WELCOME_CHANNEL_DEFAULT_MESSAGE_ID});
+    message.channel.bulkDelete(messagesToDelete);
 
     // 新入生のToDoリストチャンネルを作成
     // const createTodoChannel = require('./createTodoChannel.js');
@@ -34,8 +41,4 @@ module.exports = async (message)=>{
     // MongoDBデータベースに追記
     // const addToDatabase = require('./addToDatabase.js');
     // await addToDatabase(memberID, name, gen, newTodoChannelID)
-
-    //ウェルカムchの不要なメッセージを削除する
-    const messagesToDelete = await message.channel.messages.fetch({after: process.env.WELCOME_CHANNEL_MESSAGE_ID});
-    message.channel.bulkDelete(messagesToDelete);
 }
