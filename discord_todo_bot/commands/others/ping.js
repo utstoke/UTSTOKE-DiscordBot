@@ -14,7 +14,7 @@ module.exports = {
         const inputString = interaction.options.getString('input');
         
         if (inputString==='ping'){
-            await interaction.reply('Pong!');
+            await interaction.reply('Pong! (test)');
         }else{
             await interaction.reply('That is not ping.');
         }

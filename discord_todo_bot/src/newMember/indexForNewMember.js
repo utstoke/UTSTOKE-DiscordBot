@@ -35,10 +35,7 @@ module.exports = async (message)=>{
     message.channel.bulkDelete(messagesToDelete);
 
     // 新入生のToDoリストチャンネルを作成
-    // const createTodoChannel = require('./createTodoChannel.js');
-    // const newTodoChannelID = await createTodoChannel(message, name, gen);
 
     // MongoDBデータベースに追記
-    // const addToDatabase = require('./addToDatabase.js');
-    // await addToDatabase(memberID, name, gen, newTodoChannelID)
+    
 }

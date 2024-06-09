@@ -6,4 +6,4 @@ module.exports = {
    async execute(member){
       await member.roles.add(process.env.NEW_MEMBER_ROLE_ID);
    }
-}
+};
