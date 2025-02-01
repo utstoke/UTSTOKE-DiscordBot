@@ -9,7 +9,7 @@ module.exports = async (message)=>{
     const requestToPersonalInfoSpreadsheet = await axios.get(`${process.env.PERSONAL_INFO_SPREADSHEET}/search?sheet=名簿&氏名=${name}`);
     const record = requestToPersonalInfoSpreadsheet.data;
 
-    if (record.length===0){
+    if (record.length === 0){
         message.reply(`❌ ${name}さんのデータは個人情報シートに記録されていません。表記を確認して、もう一度お試しください。`);
         return;
     }
