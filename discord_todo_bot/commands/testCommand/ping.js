@@ -13,8 +13,8 @@ module.exports = {
     async execute(interaction){
         const inputString = interaction.options.getString('input');
         
-        if (inputString==='ping'){
-            await interaction.reply('Pong!');
+        if (inputString === 'ping'){
+            await interaction.reply('Pong! (test)');
         }else{
             await interaction.reply('That is not ping.');
         }

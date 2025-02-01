@@ -10,7 +10,7 @@ const client = new Client({
         IntentsBitField.Flags.GuildMessages,
         IntentsBitField.Flags.MessageContent,
     ]
-})
+});
 
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
@@ -20,7 +20,7 @@ for (const folder of commandFolders){
     const commandsPath = path.join(foldersPath, folder);
     const commandFiles = fs.readdirSync(commandsPath);
     
-    if (commandFiles.length===0) continue;
+    if (commandFiles.length === 0) continue;
     
     commandFiles.filter(file => file.endsWith('.js'));
 
